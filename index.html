@@ -1,34 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Jane Doe</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Times New Roman', serif; font-size: 10pt; }
-    body { background: #f9fafb; color: #111827; line-height: 1.6; }
-    nav { background: #ffffff; padding: 1rem 2rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
-    nav a { margin-right: 1rem; text-decoration: none; color: #2563eb; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-    h2 { font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.25rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Ebrahim Bedeer Mohamed - Academic Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #333;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 12pt;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 11pt;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .section h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .profile-content {
+            flex-grow: 1;
+        }
+
+        .research-interests ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        .research-interests li {
+            margin-bottom: 1px;
+        }
+
+        .highlights {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #0066cc;
+            margin: 20px 0;
+        }
+
+        .highlights h3 {
+            font-size: 12pt;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .highlights ul {
+            padding-left: 20px;
+        }
+
+        .highlights li {
+            margin-bottom: 3px;
+        }
+
+        .news-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .news-item {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .news-date {
+            font-weight: bold;
+            color: #666;
+            font-size: 9pt;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .quick-link {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .quick-link:hover {
+            background-color: #e9ecef;
+        }
+
+        .quick-link a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .quick-link p {
+            margin-top: 5px;
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .placeholder-image {
+            width: 150px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 9pt;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            color: #666;
+            font-size: 9pt;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            nav li {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <div><strong>Dr. Jane Doe</strong></div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="group.html">Research Group</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-  <div class="container">
-    <h2>About Me</h2>
-    <p>I am an Assistant Professor in the Department of Computer Science at the University of Somewhere. My research interests include machine learning, data science, and ethical AI.</p>
-  </div>
+    <header>
+        <h1>Prof. Ebrahim Bedeer Mohamed</h1>
+        <div class="title">Assistant Professor</div>
+        <div class="contact-info">
+            Department of Electrical and Computer Engineering<br>
+            University of Saskatchewan<br>
+            Office: 3B05 Engineering Building, 57 Campus Drive, Saskatoon, SK, S7N 5A9<br>
+            Email: <a href="mailto:e.bedeer@usask.ca">e.bedeer@usask.ca</a><br>
+            Phone: (306) 966-5473 
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="Research Group.html">People</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <div class="placeholder-image">
+                        [Profile Photo]
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <h2>Welcome</h2>
+                    <p>Dr. John Smith is a Professor of Computer Science at University Name, specializing in artificial intelligence, machine learning, and computer vision. His research focuses on developing novel algorithms for pattern recognition and their applications in healthcare and autonomous systems.</p>
+                    <br>
+                    <p>He leads a research group of 15 members including PhD students, postdoctoral researchers, and visiting scholars. The group has published over 150 peer-reviewed articles and received funding from NSF, NIH, and industry partners.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <h3>Research Highlights</h3>
+            <ul>
+                <li>Leading research in medical image analysis with applications in cancer detection</li>
+                <li>Developing novel deep learning architectures for autonomous vehicle perception</li>
+                <li>Pioneering work in federated learning for privacy-preserving AI</li>
+                <li>Active collaboration with industry partners including Google, Microsoft, and NVIDIA</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Recent News</h2>
+            <div class="news-section">
+                <div class="news-item">
+                    <div class="news-date">May 2024</div>
+                    <div>Paper accepted at CVPR 2024 on "Real-time Semantic Segmentation for Autonomous Driving"</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">April 2024</div>
+                    <div>Received NSF grant of $1.2M for "Privacy-Preserving Machine Learning in Healthcare"</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">March 2024</div>
+                    <div>Keynote speaker at International Conference on Medical Imaging (ICMI 2024)</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">February 2024</div>
+                    <div>Three PhD students received outstanding paper awards at AAAI 2024</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Quick Links</h2>
+            <div class="quick-links">
+                <div class="quick-link">
+                    <a href="publications.html">Publications</a>
+                    <p>150+ peer-reviewed papers in top venues</p>
+                </div>
+                <div class="quick-link">
+                    <a href="people.html">Research Group</a>
+                    <p>15 active members including PhD students and postdocs</p>
+                </div>
+                <div class="quick-link">
+                    <a href="research.html">Current Projects</a>
+                    <p>Funded research in AI, ML, and computer vision</p>
+                </div>
+                <div class="quick-link">
+                    <a href="teaching.html">Teaching</a>
+                    <p>Courses in machine learning and computer vision</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Brief Bio</h2>
+            <p>Dr. Smith received his Ph.D. in Computer Science from Stanford University in 2010. Prior to joining University Name in 2012, he worked as a research scientist at Google Research. He has served as a program committee member for top-tier conferences including CVPR, ICCV, ECCV, and NeurIPS, and is an associate editor for IEEE Transactions on Pattern Analysis and Machine Intelligence.</p>
+            <br>
+            <p>His research has been recognized with several awards including the NSF CAREER Award (2015), IEEE Computer Society Outstanding Paper Award (2018), and the University Excellence in Research Award (2020).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Last updated: May 2024 | © 2024 Dr. John Smith</p>
+    </footer>
 </body>
 </html>
